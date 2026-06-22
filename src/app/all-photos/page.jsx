@@ -1,18 +1,17 @@
 import PhotoCard from '@/components/PhotoCard';
+import { getPhotos } from '@/lib/getPhotos';
 import React from 'react';
 
-const AllPhotos = async() => {
-    const res = await fetch("https://pixgen-app.vercel.app/data.json");
-    const photo = await res.json();
-     console.log(photo,"all photos");
+const AllPhotos = async () => {
+    const photo = await getPhotos();
+
     return (
         <div className='grid lg:grid-cols-4'>
             {
-                photo.map((item) => <PhotoCard key={item.id} item={item}>
-                    {item.title}
-                </PhotoCard>)
+                photo.map((item) => (
+                    <PhotoCard key={item.id} item={item} />
+                ))
             }
-
         </div>
     );
 };
