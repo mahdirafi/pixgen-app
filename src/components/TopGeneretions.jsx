@@ -3,7 +3,8 @@ import PhotoCard from './PhotoCard';
 import { getPhotos } from '@/lib/getPhotos';
 
 const TopGenerations = async() => {
-    const photo = await getPhotos();
+    const e = await getPhotos();
+    const photo = e.slice(0,12);
 
     return (
         <div className='mt-22'>
