@@ -19,12 +19,10 @@ export default function RootLayout({ children }) {
       data-theme="light"
       className={`${OutfitFonts.className} h-full antialiased light`}
 >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="max-w-[90%] mx-auto bg-background text-foreground" cz-shortcut-listen="true">
 
         <Navbar/>
-        <main>
-          {children}
-        </main>
+        <main> {children} </main>
         <Footer/>
 
         </body>
