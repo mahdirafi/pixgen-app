@@ -44,7 +44,7 @@ const AllPhotosDetails = async ({ params }) => {
                 {/* Back button */}
                 <div className='absolute top-4 right-4'>
                     <Link href='/all-photos'>
-                        <button className='bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full border border-white/20 transition'>
+                        <button className='bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white text-sm px-4 py-2 rounded-full border border-white/20 transition cursor-pointer'>
                             ← Back
                         </button>
                     </Link>
