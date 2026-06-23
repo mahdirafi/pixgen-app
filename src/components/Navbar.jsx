@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
  
@@ -36,12 +37,18 @@ const Navbar = () => {
 
         <div className="flex gap-4">
           <ul className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href={"/signup"}>SignUp</Link>
-            </li>
-            <li>
+
+           <Button >
+            <Link
+              href="/signup"
+              className="">
+              Sign Up
+            </Link>
+          </Button>
+
+            <Button  variant="outline">
               <Link href={"/signin"}>SignIn</Link>
-            </li>
+            </Button>
           </ul>
         </div>
       </nav>

@@ -6,7 +6,7 @@ export const getPhotos = async () => {
     return photos;
 };
 
-//  for id
+//  for id find method
 export const getPhotoById = async (id) => {
     const photos = await getPhotos();
     return photos.find((photo) => photo.id === Number(id));

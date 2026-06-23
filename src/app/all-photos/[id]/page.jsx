@@ -17,7 +17,7 @@ const AllPhotosDetails = async ({ params }) => {
                 Photo not found!
             </div>
         );
-    }
+    };
 
     return (
         <div className='min-h-screen bg-gray-950 text-white'>
