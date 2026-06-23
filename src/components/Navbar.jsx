@@ -8,7 +8,7 @@ import Link from "next/link";
 const Navbar = () => {
 
   const userData = authClient.useSession() ;
-  const user = userData.data.user;
+  const user = userData.data?.user;
   console.log(user);
 
   return (
@@ -61,10 +61,16 @@ const Navbar = () => {
           </ul>}
 
           {user && 
-          <Avatar>
-          <Avatar.Image alt="John Doe" src="https://img.heroui.chat/image/avatar?w=400&h=400&u=3" />
-          <Avatar.Fallback>JD</Avatar.Fallback>
-      </Avatar>
+         <Avatar>
+          <Avatar.Image
+            alt={user?.name}
+            src={user?.image}
+            referrerPolicy="no-referrer"
+          />
+          <Avatar.Fallback>
+            {user?.name?.charAt(0)}
+          </Avatar.Fallback>
+        </Avatar>
           }
         </div>
       </nav>

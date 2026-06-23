@@ -36,12 +36,7 @@ console.log({data,error});
     console.log("Success");
   };
 
-  const handleGithubSignIn = async() =>{
-    await authClient.signIn.social({
-      provider: "github",
-    });
-    console.log("GitHub Login Success");
-  };
+  
 
   return (
     <Card className="border mx-auto w-125 py-10 mt-5">
@@ -110,14 +105,8 @@ console.log({data,error});
               <BsGoogle/> SignIn with Google
       </Button>
       </div>
-      <div className="text-center ">
-        
-           
-      <Button onClick={handleGithubSignIn}
-              className="mb-3" variant="outline">
-              <BsGithub/> SignIn with GitHub
-      </Button>
-      </div>
+      
+       
     </Card>
   );
 }
