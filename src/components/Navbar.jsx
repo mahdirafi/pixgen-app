@@ -11,6 +11,13 @@ const Navbar = () => {
   const user = userData.data?.user;
   console.log(user);
 
+  const handleSignOut = async() =>{
+    await authClient.signOut();
+  }
+
+
+
+
   return (
     <div className="border-b px-2">
       <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
@@ -41,7 +48,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 items-center">
           
           {!user && 
            <ul className="flex items-center space-x-2 text-sm">
@@ -60,18 +67,23 @@ const Navbar = () => {
             
           </ul>}
 
-          {user && 
-         <Avatar>
-          <Avatar.Image
-            alt={user?.name}
-            src={user?.image}
-            referrerPolicy="no-referrer"
-          />
-          <Avatar.Fallback>
-            {user?.name?.charAt(0)}
-          </Avatar.Fallback>
-        </Avatar>
+          { user && ( 
+            <div className="flex gap-2 items-center">
+              
+                <Avatar>
+                  <Avatar.Image
+                    alt={user?.name}
+                    src={user?.image}
+                    referrerPolicy="no-referrer"
+                  />
+                  <Avatar.Fallback>
+                    {user?.name?.charAt(0)}
+                  </Avatar.Fallback>
+                </Avatar>
+                <Button onClick={handleSignOut} size="sm" variant="danger">SignOut</Button>
+            </div> )
           }
+
         </div>
       </nav>
     </div>

@@ -11,7 +11,7 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
-import { BsGithub, BsGoogle } from "react-icons/bs";
+import { BsGoogle } from "react-icons/bs";
 
 export default function SignInPage() {
   const onSubmit = async (e) => {
