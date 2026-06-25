@@ -10,7 +10,7 @@ const ProfilePge = () => {
       console.log(user);
 
     return (
-        <div className=' '>
+        <div className='my-8'>
              <Card className='max-w-96 mx-auto flex flex-col items-center border -mt-4'>
                 <Avatar className='h-48 w-48'>
                     <Avatar.Image
