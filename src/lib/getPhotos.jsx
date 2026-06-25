@@ -6,6 +6,14 @@ export const getPhotos = async () => {
     return photos;
 };
 
+export const getCategory = async () =>{
+    const res = await fetch("https://pixgen-app.vercel.app/category.json", {
+        next: { revalidate: 3600}
+    });
+    const category = await res.json();
+    return category;
+}
+
 //  for id find method
 export const getPhotoById = async (id) => {
     const photos = await getPhotos();

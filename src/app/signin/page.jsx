@@ -30,8 +30,9 @@ console.log({data,error});
   };
 
   const handleGoogleSignIn = async() =>{
-    await authClient.signIn.social({
+      await authClient.signIn.social({
       provider: "google",
+      callbackURL: "/",
     });
     console.log("Success");
   };
@@ -100,6 +101,7 @@ console.log({data,error});
       <div className="text-center ">
         
           <p className="text-center mt-12">OR</p>
+
       <Button onClick={handleGoogleSignIn}
               className="mt-6 mb-1" variant="outline">
               <BsGoogle/> SignIn with Google
