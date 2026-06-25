@@ -10,9 +10,12 @@ export default function Home() {
       <TopGenerations/>
       
       <div className="text-center mt-22">
-        <Link href={"/all-photos"} >
-                <Button className="w-[20%] " variant="danger">View All Photos</Button>
-        </Link></div>
+  <Link href={"/all-photos"}>
+    <Button className="w-full sm:w-[50%] md:w-[30%] lg:w-[20%]" variant="danger">
+      View All Photos
+    </Button>
+  </Link>
+</div>
      </>
   );
 }
